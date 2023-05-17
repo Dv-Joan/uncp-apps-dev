@@ -45,7 +45,31 @@ function Fetch() {
 						<th>Image</th>
 					</tr>
 				</thead>
-				<tbody>{rows}</tbody>
+				<tbody>
+					{Array.isArray(products) ? (
+						products.map((product) => (
+							<tr key={product.id}>
+								<td>{product.nombre}</td>
+								<td>{product.descripcion}</td>
+								<td>{product.precio}</td>
+								<td>
+									<img
+										src={product.imagen}
+										width={20}
+										height={20}
+										alt="product-image"
+									/>
+								</td>
+							</tr>
+						))
+					) : (
+							<tr>
+								<td colSpan="4">No hay productos</td>
+						</tr>
+					)
+						
+					}
+				</tbody>
 			</Table>
 		</div>
 	);
