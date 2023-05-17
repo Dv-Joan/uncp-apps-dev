@@ -2,6 +2,7 @@ import { useState } from "react";
 import uncpLogo from "./assets/images/uncp-logo.png";
 import fisLogo from "./assets/images/fis-logo.png";
 import Fetch from "./components/Fetch";
+import ReactBasics from "./components/ReactBasics";
 function App() {
 	const [count, setCount] = useState(0);
 
@@ -17,9 +18,12 @@ function App() {
 				</div>
 				<img src={fisLogo} width={100} className="fis-logo" alt="logo" />
 			</header>
-			<div className="flex justify-center">
+			<main>
+
 				<Fetch />
-			</div>
+				<ReactBasics />
+			</main>
+
 		</div>
 	);
 }
