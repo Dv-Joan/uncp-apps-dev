@@ -7,10 +7,10 @@ function App() {
 	const [count, setCount] = useState(0);
 
 	return (
-		<div className="App m-10">
-			<header className="App-header flex justify-between items-center">
+		<div className="m-10 App font-noto-sans">
+			<header className="flex items-center justify-between font-bold App-header">
 				<img src={uncpLogo} width={100} className="uncp-logo" alt="logo" />
-				<div className="text-center space-y-2">
+				<div className="space-y-2 text-center">
 					<strong className="text-3xl">
 						Universidad Nacional Del Centro del Perú
 					</strong>

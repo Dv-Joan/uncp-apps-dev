@@ -29,20 +29,20 @@ function Fetch() {
 		handleFetch();
 	}, []);
 	return (
-		<div className="flex flex-col justify-center items-center">
-			<div className="flex justify-center items-center gap-3">
+		<div className="flex flex-col items-center justify-center">
+			<div className="flex items-center justify-center gap-3">
 				<hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
-				<span className="bg-yellow-400 px-3 mt-1 font-semibold text-md rounded-full">data</span>
-				<h1 className="font-bold  text-3xl text-center my-10">  Fetch</h1><hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
+				<span className="px-3 mt-1 font-semibold bg-yellow-400 rounded-full text-md">data</span>
+				<h1 className="my-10 text-3xl font-bold text-center">  Fetch</h1><hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
 			</div>
 			{loading && <p>Loading...</p>}
 			{error && <p>Error :(</p>}
-			<Table horizontalSpacing="md" className="text-neutral-300 w-1/2 border-2 border-neutral-300" verticalSpacing="md" fontSize="sm">
-				<thead className="bg-yellow-400 opacity-80">
+			<Table horizontalSpacing="md" className="w-1/2 bg-white border-2 font-noto-sans text-zinc-800 border-neutral-300" verticalSpacing="md" fontSize="sm">
+				<thead className="bg-yellow-400  drop-shadow-md">
 					<tr>
-						<th style={{ color: "white" }} >Title</th>
-						<th style={{ color: "white" }}>Price</th>
-						<th style={{ color: "white" }}>Image</th>
+						<th >Title</th>
+						<th >Price</th>
+						<th >Preview</th>
 					</tr>
 				</thead>
 				<tbody>
