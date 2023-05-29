@@ -12,8 +12,8 @@ export default function AlertColorChanger() {
 
 
     return (
-        <div className="m-10">
-            <div className={`alert alert-${colors[currentColor]}`} role="alert">
+        <div className="p-5 flex justify-center items-center">
+            <div className={`alert alert-${colors[currentColor]} w-64`} role="alert">
                 Alerta que cambia de color!
             </div>
 

@@ -28,20 +28,20 @@ function App() {
 				<div className="my-5">
 					<div className="flex items-center justify-center gap-3">
 						<hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
-						<span className="px-3 mt-1 font-semibold rounded-full bg-red-400 text-md">qualified</span>
-						<h1 className="my-10 text-3xl font-bold text-center">  Pratice Nº 1</h1>
+						<span className="px-3 mt-1 text-white font-semibold rounded-full bg-red-400 text-md">qualified</span>
+						<h1 className="my-10 text-3xl font-bold text-center">  Practice Nº 1</h1>
 						<hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
 					</div>
-					<section>
+					<section >
 
 						<AlertColorChanger />
-						<div className="flex gap-5 justify-center items-center">
+						<div className="grid grid-flow-row grid-cols-2 gap-2 mx-20 justify-center items-center">
 
 							<NumbersArray />
 							<Operations />
+							<BackgroundInputs />
+							<ListaEnumerada />
 						</div>
-						<BackgroundInputs />
-						<ListaEnumerada />
 					</section>
 				</div>
 			</main>

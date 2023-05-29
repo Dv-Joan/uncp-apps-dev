@@ -12,7 +12,7 @@ const Child = ({ numbers, oddRender }) => {
     ));
 
     return (
-        <div className=' shadow-xl w-[500px] h-[470px] border-2 border-dashed border-red-400 rounded-lg p-5 '>
+        <div className=' shadow-xl w-[500px] h-[470px] border-2 border-dashed border-cyan-400 rounded-lg p-5 '>
             <div className='flex'>
                 <ul className='flex '>
                     <li className='grid grid-flow-row grid-cols-10 items-center justify-center gap-3'>

@@ -30,7 +30,7 @@ const Operations = () => {
     };
 
     return (
-        <div className=' shadow-xl flex flex-col gap-2.5 p-5 text-slate-700 border-2 border-dashed rounded-lg border-yellow-200'>
+        <div className=' shadow-xl flex mt-[36px] flex-col gap-2.5 p-5 text-slate-700 border-2 border-dashed rounded-lg border-yellow-200'>
             <h1 className='text-xl font-semibold'>Calculadora</h1>
 
 

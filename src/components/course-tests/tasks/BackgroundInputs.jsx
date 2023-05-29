@@ -12,8 +12,8 @@ export default function BackgroundInputs() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-96 bg-neutral-100/50 drop-shadow-xl border-2 border-dashed rounded-lg border-yellow-200">
-            <h1 className="text-3xl font-bold mb-4">Color App</h1>
+        <div className="flex flex-col my-5 items-center w-[400px]  justify-center h-96 shadow-xl border-2 border-dashed rounded-lg border-yellow-200">
+            <h1 className="text-2xl font-bold mb-4">Color App</h1>
             <div className="flex gap-4">
                 <input
                     type="number"
@@ -45,7 +45,7 @@ export default function BackgroundInputs() {
             </div>
             <button
                 onClick={cambiarColor}
-                className="mt-4 px-4 py-2 border-[1px]  border-black text-black  rounded-lg"
+                className="mt-4 px-4 py-2 border-[1px]  hover:bg-black/20 active:bg-black/70  border-black text-black  rounded-lg"
             >
                 Cambiar color de fondo
             </button>
