@@ -87,7 +87,7 @@ export const Operations = () => {
     };
 
     return (
-        <div className=" shadow-xl flex mt-14 flex-col gap-2.5 p-5 border-2 border-dashed rounded-lg border-yellow-200">
+        <div className=" shadow-xl flex mt-96 flex-col gap-2.5 p-5 border-2 border-dashed rounded-lg border-yellow-200">
             <h1 className="mb-5 text-2xl font-semibold ">Calculadora</h1>
 
             <input
@@ -253,10 +253,16 @@ export function AlertColorChanger() {
     );
 }
 
-function WeekSeven() {
+export default function WeekSeven() {
     return (
-        <div>WeekSeven</div>
+        <div className='flex flex-col gap-5'>
+            {/* <BackgroundInputs /> */}
+            <AlertColorChanger />
+            <NumbersArray />
+            <Operations />
+
+
+        </div>
     )
 }
 
-export default WeekSeven

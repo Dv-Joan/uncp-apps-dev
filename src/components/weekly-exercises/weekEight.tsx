@@ -181,7 +181,7 @@ export function StudentsGrades() {
 
         <form >
             <h1 className='mb-10 text-2xl font-bold'>Students & Grades</h1>
-            <div className="grid gap-3 mb-5 md:grid-cols-2">
+            <div className="grid gap-3 mb-5 md:grid-cols-1">
                 <div>
 
                     <input type="text" id="first_name" className="input input-primary bg-primary/10" placeholder="Name" required />
@@ -300,7 +300,12 @@ export function BackgroundInputs() {
 
 function WeekEight() {
     return (
-        <div>WeekEight</div>
+        <div className='flex flex-col gap-5'>
+            <BackgroundInputs />
+            {/* <RGBArray /> */}
+            <StudentsGrades />
+
+        </div>
     )
 }
 
