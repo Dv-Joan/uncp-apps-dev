@@ -11,10 +11,10 @@ const Child = ({ numbers, oddRender }) => {
   ));
 
   return (
-    <div className=" shadow-xl w-[500px] h-[470px] border-2 border-dashed border-yellow-200 rounded-lg p-5 ">
-      <div className="flex">
-        <ul className="flex ">
-          <li className="grid items-center justify-center grid-flow-row grid-cols-10 gap-3">
+    <div className=" shadow-xl  h-[470px]  w-[500px] border-2 border-dashed border-yellow-200 rounded-lg ">
+      <div className="flex justify-center pt-12">
+        <ul>
+          <li className="grid grid-cols-10 gap-3 gridgrid-flow-row">
             {numbersList}
           </li>
         </ul>

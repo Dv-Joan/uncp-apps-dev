@@ -25,7 +25,7 @@ const ListaNumerada = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-5 m-10 border-2 border-yellow-200 border-dashed rounded-lg shadow-xl ">
+    <div className="flex flex-col gap-5 p-5 m-10 border-2 border-yellow-200 border-dashed rounded-lg shadow-xl ">
       <h1 className="mb-5 text-2xl tracking-tight">Generador de Tags</h1>
 
       <input
@@ -39,7 +39,7 @@ const ListaNumerada = () => {
       <button className="btn btn-accent w-36" onClick={generarLista}>
         Generate
       </button>
-      <div className="overflow-x-auto">
+      <div className="mt-10 overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>

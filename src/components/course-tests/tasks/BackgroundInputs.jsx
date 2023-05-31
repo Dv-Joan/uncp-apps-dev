@@ -4,16 +4,20 @@ export default function BackgroundInputs() {
   const [red, setRed] = useState("");
   const [green, setGreen] = useState("");
   const [blue, setBlue] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("");
 
   const cambiarColor = () => {
     const rgbColor = `rgb(${red}, ${green}, ${blue})`;
-    document.body.style.backgroundColor = rgbColor;
+    setBackgroundColor(rgbColor);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 p-10 border-2 border-yellow-200 border-dashed rounded-lg shadow-xl">
-      <h1 className="mb-4 text-2xl font-bold tracking-tight">Bg Changer</h1>
-      <div className="flex gap-4">
+    <div
+      className="flex flex-col items-center justify-center gap-5 p-10 border-2 border-yellow-200 border-dashed rounded-lg shadow-xl"
+      style={{ backgroundColor }}
+    >
+      <h1 className="mb-4 text-2xl font-bold tracking-tight">BG Changer</h1>
+      <div className="flex gap-4 text-slate-800">
         <input
           type="number"
           min="1"
@@ -21,7 +25,7 @@ export default function BackgroundInputs() {
           value={red}
           onChange={(e) => setRed(e.target.value)}
           placeholder="R"
-          className="w-16 px-2 py-1 border-[1px] rounded bg-red-200 border-red-600 text-red-600"
+          className="max-w-xs bg-red-200 input input-bordered"
         />
         <input
           type="number"
@@ -30,7 +34,7 @@ export default function BackgroundInputs() {
           value={green}
           onChange={(e) => setGreen(e.target.value)}
           placeholder="G"
-          className="w-16 px-2 py-1 rounded border-[1px]  bg-green-200 border-green-600 text-green-600"
+          className="max-w-xs bg-green-200 input input-bordered"
         />
         <input
           type="number"
@@ -39,11 +43,11 @@ export default function BackgroundInputs() {
           value={blue}
           onChange={(e) => setBlue(e.target.value)}
           placeholder="B"
-          className="w-16 px-2 py-1 border-[1px]  bg-blue-200 border-blue-600 text-blue-600 rounded "
+          className="max-w-xs bg-blue-200 input input-bordered"
         />
       </div>
-      <button onClick={cambiarColor} className="btn btn-primary btn-outline">
-        Cambiar color de fondo
+      <button onClick={cambiarColor} className="btn btn-accent ">
+        Change Backgroung
       </button>
     </div>
   );

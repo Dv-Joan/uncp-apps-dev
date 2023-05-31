@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "noto-sans" : ['"Noto Sans"', "sans-serif"],
+        "noto-sans": ["Noto Sans", "sans-serif"],
+        "monomaniac": ["Monomaniac One"],
+        "rubik" : ["Rubik Puddles", 'cursive']
       }
     },
   },
