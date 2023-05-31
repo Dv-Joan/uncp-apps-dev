@@ -29,14 +29,14 @@ function ReactBasics() {
 
 
     return (
-        <div>
+        <div >
             <div className="flex items-center justify-center gap-3">
                 <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
-                <span className="px-3 mt-1 font-semibold rounded-full bg-cyan-400 text-md">react</span>
-                <h1 className="my-10 text-3xl font-bold text-center">  Basics</h1>
+                <span className="px-3 mt-1 font-semibold rounded-full bg-cyan-200 border-[1px] border-cyan-700 text-cyan-600 text-md">week 6</span>
+                <h1 className="my-10 text-3xl font-bold tracking-tighter text-center">React JS</h1>
                 <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
             </div>
-            <main className='border-[1px] ml-80 border-dashed border-cyan-400 rounded-lg p-5 w-1/2' >
+            <main className='border-[1px] ml-80 shadow-md border-dashed border-cyan-400 rounded-lg p-5 w-1/2' >
                 <div className="flex items-center justify-center gap-3">
                     <button className="px-5 mt-1 font-semibold rounded-md active:bg-cyan-400/30 bg-cyan-400 text-md" onClick={() => setCount(count + 1)}>+</button>
                     <h1 className="my-10 text-3xl font-bold text-center">{count}</h1>

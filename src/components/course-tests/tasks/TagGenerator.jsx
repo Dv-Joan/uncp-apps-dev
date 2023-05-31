@@ -21,9 +21,9 @@ const ListaNumerada = () => {
     };
 
     return (
-        <div className='m-10 p-5 text-slate-700 border-2 border-dashed rounded-lg border-yellow-200  shadow-xl '>
+        <div className='p-5 m-10 border-2 border-yellow-200 border-dashed rounded-lg shadow-xl '>
 
-            <h1 className='text-2xl mb-5'>Generador de Tags</h1>
+            <h1 className='mb-5 text-2xl'>Generador de Tags</h1>
             <div>
                 <input
                     type="text"
@@ -33,8 +33,8 @@ const ListaNumerada = () => {
                     className='px-2 py-1 rounded-lg bg-transparent border-[1px] border-slate-700'
                 />
             </div>
-            <button className="mt-4 px-4 py-2 border-[1px] hover:bg-black/20 active:bg-black/70  border-black/50 text-black  rounded-lg" onClick={generarLista}>Generar Lista</button>
-            <div className='text-slate-700 my-3 italic' >
+            <button className="mt-4 px-4 py-2 border-[1px] hover:bg-black/20 active:bg-black/70  border-black/70   rounded-lg" onClick={generarLista}>Generar Lista</button>
+            <div className='my-3 italic text-slate-700' >
 
                 {listaRenderizada}
             </div>

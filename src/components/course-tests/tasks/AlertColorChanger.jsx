@@ -1,22 +1,27 @@
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect } from 'react';
 
-const colors = ['primary', 'warning', 'danger', 'success', 'secondary'];
+const colors = ['blue', 'yellow', 'red', 'green', 'gray'];
 
 export default function AlertColorChanger() {
     const [currentColor, setCurrentColor] = useState(0);
 
-    setTimeout(() => {
-        setCurrentColor((currentColor + 1) % colors.length);
-    }, 3000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentColor((currentColor + 1) % colors.length);
+        }, 3000);
 
+        return () => clearInterval(interval);
+    }, [currentColor]);
+
+    const divStyle = {
+        backgroundColor: colors[currentColor],
+    };
 
     return (
-        <div className="p-5 flex justify-center items-center">
-            <div className={`alert alert-${colors[currentColor]} w-64`} role="alert">
-                Alerta que cambia de color!
+        <div className="flex items-center justify-center p-5">
+            <div className="w-1/3 p-5 text-white rounded-lg shadow-lg" style={divStyle}>
+                <h1 className="text-xl font-bold">AlertColorChanger</h1>
             </div>
-
         </div>
     );
 }
