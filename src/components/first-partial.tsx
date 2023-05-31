@@ -1,6 +1,5 @@
 import React from 'react'
 import { WeeklyButton, Goals } from './ui/elements'
-import ReactBasics from './ReactBasics'
 import WeekTwo from './weekly-exercises/weekTwo'
 import WeekFour from './weekly-exercises/weekFour'
 import WeekThree from './weekly-exercises/weekThree'
@@ -13,7 +12,7 @@ import WeekEight from './weekly-exercises/weekEight'
 function FirstPartial() {
     return (
         <div className='flex justify-center gap-5 mt-5'>
-            <WeeklyButton weekNumber={1} weeklyGoals={<Goals weeklyGoalOne="Participación activa" weeklyGoalTwo="Comprensión del silabus" weeklyGoalThree="Formación de Grupos de Trabajo" weeklyClassDescription="Se realizó la exposicion del silabus del curso de desarrollo de aplicaciones web para el ciclo 2023-I con los diferentes temas que se tratarán durante el perido académico" />} weeklyProject={<ReactBasics />} />
+            <WeeklyButton weekNumber={1} weeklyGoals={<Goals weeklyGoalOne="Participación activa" weeklyGoalTwo="Comprensión del silabus" weeklyGoalThree="Formación de Grupos de Trabajo" weeklyClassDescription="Se realizó la exposicion del silabus del curso de desarrollo de aplicaciones web para el ciclo 2023-I con los diferentes temas que se tratarán durante el perido académico" />} weeklyProject="WeekOne" />
 
             <WeeklyButton
                 weekNumber={2}
