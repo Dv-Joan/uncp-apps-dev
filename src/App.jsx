@@ -9,6 +9,9 @@ import BackgroundInputs from "./components/course-tests/tasks/BackgroundInputs";
 import ListaEnumerada from "./components/course-tests/tasks/TagGenerator";
 import Header from "./components/header";
 import Basics from "./components/Basics";
+import RGBArray from "./components/parcial1/rgb-array";
+import Timer from "./components/parcial1/timer";
+import StudentsGrades from "./components/parcial1/students-grades";
 function App() {
   return (
     <div className="m-10 App font-noto-sans dark:text-white text-zinc-900">
@@ -44,10 +47,25 @@ function App() {
               <BackgroundInputs />
               <ListaEnumerada />
             </div>
+            <div className="flex items-center justify-center gap-3">
+              <hr className="w-96 h-0.5 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
+              <span className="px-3 mt-1 font-semibold rounded-full bg-red-200 border-[1px] border-red-700 text-red-600 text-md">
+                week 8
+              </span>
+              <h1 className="my-10 text-3xl font-bold text-center">Exam</h1>
+              <hr className="w-96 h-0.5 my-8 bg-gray-200 border-0 rounded dark:bg-gray-500" />
+            </div>
+            <div className="grid items-center justify-center grid-flow-row grid-cols-2 gap-2 mx-20">
+
+              {/* <RGBArray /> */}
+              <Timer />
+              <StudentsGrades />
+            </div>
+
           </section>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }
 

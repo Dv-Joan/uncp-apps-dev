@@ -19,13 +19,16 @@ function Basics() {
                         <h3 className="flex gap-5 text-lg font-bold text-primary"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
                         </svg>
-                            Congratulations random Internet user!</h3>
-                        <p className="px-12 py-4 text-sm">Emmet es una poderosa herramienta que acelera el flujo de trabajo en el desarrollo web al permitir la generación rápida de código HTML y CSS.</p>
+                            Elementary Snippets</h3>
+                        <p className="px-12 py-4 text-sm">Emmet es una poderosa herramienta que acelera el flujo de trabajo en el desarrollo web al permitir la generación rápida de código HTML</p>
                         <ul tabIndex={0} className="w-full p-2 shadow dropdown-content menu bg-base-100 rounded-box">
-                            <li><a><strong className='text-2xl font-bold text-secondary'>{'< ! >'}</strong> Una estructura básica de HTML</a></li>
-                            <li><a><strong className='text-2xl font-bold text-secondary'>{'< # >'}</strong> Un elemento con un id</a></li>
-                            <li><a><strong className='text-2xl font-bold text-secondary'>{'< . >'}</strong> Un elemento con una clase</a></li>
-                            <li><a><strong className='text-2xl font-bold text-secondary'>{'< ul>li*3 >'}</strong>Una lista  con 3 elementos de lista</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' ! '}</strong> Estructura básica de HTML</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' # '}</strong> Elemento con un id</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' . '}</strong> Elemento con una clase</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' > '}</strong> Elemento con subnivel</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' $ '}</strong> Elmento con numeración</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' { } '}</strong> Elemento con texto dentro</a></li>
+                            <li><a href='https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive' target='_blank'><strong className='text-2xl font-bold text-secondary'>{' ^ '}</strong> Elemento con supernivel</a></li>
                         </ul>
                         <div className="modal-action">
                             <label htmlFor="my-modal" className="btn">CERRAR</label>

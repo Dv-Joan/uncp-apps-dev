@@ -34,13 +34,13 @@ function Header() {
                 <img data-aos="flip-left" src={profilePic} className="max-w-sm rounded-lg shadow-2xl" />
             </div>
             <ul className="mt-20 steps">
-                <li data-content="?" className="step step-neutral">S1</li>
-                <li data-content="!" className="step step-neutral">S2</li>
-                <li data-content="✓" className="step step-neutral">S3</li>
-                <li data-content="✓" className="step step-neutral">S4</li>
-                <li data-content="✓" className="step step-neutral">S5</li>
-                <li data-content="✓" className="step step-neutral">S6</li>
-                <li data-content="✓" className="step step-neutral">S7</li>
+                <li data-content="✓" className="step step-primary">S1</li>
+                <li data-content="✓" className="step step-primary">S2</li>
+                <li data-content="✓" className="step step-primary ">S3</li>
+                <li data-content="✓" className="step step-accent">S4</li>
+                <li data-content="✓" className="step step-accent">S5</li>
+                <li data-content="✓" className="step step-accent">S6</li>
+                <li data-content="✓" className="step step-accent">S7</li>
             </ul>
         </div>
     )
