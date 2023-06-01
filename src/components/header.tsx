@@ -41,6 +41,8 @@ function Header() {
                 <li data-content="✓" className="step step-accent">S5</li>
                 <li data-content="✓" className="step step-accent">S6</li>
                 <li data-content="✓" className="step step-accent">S7</li>
+                <li data-content="✓" className="step step-info">S8</li>
+
             </ul>
         </div>
     )

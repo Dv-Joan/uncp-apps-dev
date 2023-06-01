@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function WeeklyButton({ weekNumber, weeklyGoals, weeklyProject }) {
+export function WeeklyButton({ weekNumber, weeklyGoals, weeklyProject, dropDownposition }) {
     return (
-        <div className=" dropdown">
+        <div className={`dropdown ${dropDownposition}`}>
             <label tabIndex={0} className="m-1 btn"> Semana {weekNumber} </label>
             <ul tabIndex={0} className="p-10 shadow cursor-default textt-lef dropdown-content menu bg-base-100 rounded-box ">
                 <li>{weeklyGoals}</li>
@@ -10,6 +10,8 @@ export function WeeklyButton({ weekNumber, weeklyGoals, weeklyProject }) {
                     {weeklyProject} </li>
 
             </ul>
+            {/* You can open the modal using ID.showModal() method */}
+
         </div>
     )
 }
