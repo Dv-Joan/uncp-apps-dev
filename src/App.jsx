@@ -2,6 +2,7 @@ import uncpLogo from "./assets/images/uncp-logo.png";
 import fisLogo from "./assets/images/fis-logo.png";
 import Header from "./components/header";
 import FirstPartial from "./components/first-partial";
+import SecondPartial from "./components/second-partial";
 function App() {
   return (
     <div className="m-10 App font-noto-sans dark:text-white text-zinc-900">
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <main>
         <FirstPartial />
+        <SecondPartial />
       </main>
     </div>
   );
