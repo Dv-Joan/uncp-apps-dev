@@ -20,6 +20,6 @@ export default {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "dark",
+    darkTheme: "light",
   },
 };

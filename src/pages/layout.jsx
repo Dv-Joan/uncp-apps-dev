@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 import { Button } from '@mantine/core'
 function Layout() {
     return (
-        <div className='text-white font-bold text-2xl mb-7'>
+        <div className='text-white font-bold text-2xl '>
             <nav>
                 <ul className='flex gap-3 mb-7 border-[1px] border-dotted border-lime-500 rounded-md'>
                     <li>
