@@ -5,6 +5,7 @@ import { INITIAL_FORM_VALUES } from '../../data/initialValues';
 import { TextInput, Button, Box, Group, Text, NumberInput, FileButton, Title, Table, Badge } from '@mantine/core'
 import { initialProducts } from '../../data/initialProducts';
 import { useForm } from '@mantine/form'
+import { block } from 'million/react';
 export function Form() {
     const { products, addProduct } = useProductsContext();
     const [file, setFile] = useState<File | null>(null);
@@ -25,6 +26,9 @@ export function Form() {
 
         }
     })
+    const LionBlock = block(function Lion() {
+        return <img className='mt-8 rounded-full' width={100} src="https://million.dev/lion.svg" />;
+    });
 
     const ths = (
         <tr style={{ color: 'white' }} >
@@ -32,9 +36,12 @@ export function Form() {
             <th>Modelo</th>
             <th>Precio</th>
             <th>Cantidad</th>
-            <th>Preview</th>
+            <th>Preview </th>
+
         </tr>
     );
+
+
 
     const rows = initialProducts.map((product) => (
         <tr key={product.name}>
@@ -100,6 +107,9 @@ export function Form() {
                         >Enviar</Button>
                     </Group>
                 </form>
+                {
+                    LionBlock({})
+                }
             </Box>
 
 
