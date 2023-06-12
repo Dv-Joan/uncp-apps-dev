@@ -7,7 +7,9 @@ export default {
         "noto-sans": ["Noto Sans", "sans-serif"],
         "monomaniac": ["Monomaniac One"],
         "rubik" : ["Rubik Puddles", 'cursive']
-      }
+      },
+      borderWidth: {
+        1: "1px"}
     },
   },
   
