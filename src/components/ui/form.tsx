@@ -1,65 +1,59 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { Product } from '../../types/product';
 import { TextField, Button } from '@mui/material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { Title } from '@mantine/core';
 
-
-export function ProductsForm() {
-    const { handleSubmit, control, reset } = useForm();
-
-    const onSubmit = (data) => {
-        console.log(data);
-    };
-
-
+type FormProps = {
+    products: Product[],
+    handleAdd: (product: Product) => void
+}
+export function ProductsForm({ products, handleAdd }: FormProps) {
+    const { handleSubmit, control, reset } = useForm<Product>();
+    const onSubmit: SubmitHandler<Product> = (data) => {
+        handleAdd({ ...data, id: products.length + 1 });
+        reset();
+    }
     return (
-        <form style={{ width: 600 }} className='bg-neutral-100 p-7 rounded-lg flex flex-col gap-7 max-w-sm' onSubmit={handleSubmit(onSubmit)}>
+        <form style={{ width: 600 }} className='flex flex-col max-w-sm bg-white rounded-lg p-7 gap-7' onSubmit={handleSubmit(onSubmit)}>
             <Title order={3} color='black' >
                 Registrar Producto
             </Title>
             <Controller
-                name="productName"
+                name="name"
                 control={control}
-
-                defaultValue=""
                 render={({ field }) => <TextField {...field} label="Product Name" />}
             />
             <Controller
 
-                name="productDescription"
+                name="description"
                 control={control}
                 defaultValue=""
 
-                render={({ field }) => <TextareaAutosize placeholder='Description' className='bg-transparent py-3 text-black border-1 border-slate-500 rounded p-2'
+                render={({ field }) => <TextareaAutosize placeholder='Description' className='p-2 py-3 text-black bg-transparent rounded border-1 border-slate-500'
                     {...field}
 
                 />}
             />
             <Controller
-                name="productModel"
+                name="model"
                 control={control}
-
                 defaultValue=""
                 render={({ field }) => <TextField {...field} label="Model" />}
             />
             <Controller
-                name="productPrice"
+                name="price"
                 control={control}
-
-                defaultValue=""
                 render={({ field }) => <TextField type='number'  {...field} label="Price" />}
             />
             <Controller
-                name="productQuantity"
+                name="quantity"
                 control={control}
-
-                defaultValue=""
                 render={({ field }) => <TextField type='number' {...field} label="Quantity" />}
             />
             <div className='flex justify-between'>
-
-                <Button type="submit" variant='outlined' onClick={reset} color='secondary' >Cancelar</Button>
+                <Button type="reset" onClick={() => reset()} >Limpiar</Button>
                 <Button type="submit" variant='contained' >Registrar</Button>
             </div>
 
