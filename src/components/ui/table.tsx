@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Button, Chip } from '@mui/material';
-import { IconEdit, IconTrash } from '@tabler/icons-react';
+import { IconEdit, IconTrash, IconCurrencyDollar } from '@tabler/icons-react';
 import Paper from '@mui/material/Paper';
 import { products } from '../../data/products.json';
 import { ActionIcon, Title } from '@mantine/core';
@@ -59,20 +59,32 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
 
                         >
                             <TableCell align="right" component="th" scope="row">
-                                {product.name}
+                                <Title order={6} color='secondary'>
+                                    {
+                                        product.name
+                                    }
+                                </Title>
                             </TableCell>
                             <TableCell align="right" component="th" scope="row">
                                 {product.model}
                             </TableCell>
                             <TableCell align="center">{product.description}</TableCell>
-                            <TableCell width={90} align="right">S/. {product.price}</TableCell>
+                            <TableCell width={90} align="right">
+                                <div className="flex items-center gap-2">
+
+                                    <img src="https://img.icons8.com/?size=1x&id=SohcD1NaJrgg&format=gif" alt="price" width={20} />
+
+                                    {product.price}</div></TableCell>
+
                             <TableCell align="center">
-                                <Chip size='small' color='success' variant='outlined' label={product.quantity} />
+                                <Chip size='small' color={
+                                    product.quantity < 5 ? 'warning' : 'success'
+                                } variant='outlined' label={`${product.quantity} units`} />
                             </TableCell>
                             {/* <TableCell>
                                 <img width={200} src={product.image} alt="product-image" />
                             </TableCell> */}
-                            <TableCell align="right" >
+                            < TableCell align="right" >
                                 <div className='flex gap-2'>
                                     <ActionIcon title='edit' color='blue' onClick={
                                         () => handleEdit(product)
@@ -101,7 +113,7 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                     </TableRow>
                     }
                 </TableBody>
-            </Table>
+            </Table >
         </TableContainer >
     );
 }
