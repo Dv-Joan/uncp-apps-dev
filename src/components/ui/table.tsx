@@ -9,7 +9,15 @@ import { Button, Chip } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { products } from '../../data/products.json';
 import { Title } from '@mantine/core';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+AOS.init({
+    offset: 120,
+    duration: 500,
+    easing: 'ease',
+
+});
 type TableProps = {
     products: typeof products,
     handleDelete: (id: number) => void
@@ -41,6 +49,7 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                 <TableBody >
                     {products.length > 0 ? products.map((product) => (
                         <TableRow
+                            data-aos="fade-up"
                             className='duration-200 ease-in-out cursor-pointer hover:scale-105 hover:shadow-xl'
                             key={product.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

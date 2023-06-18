@@ -6,6 +6,7 @@ import { ProductsForm } from './../ui/form'
 import { ProductsTable } from './../ui/table'
 import { Title } from '@mantine/core'
 
+
 function WeekNine() {
     const [products, setProducts] = React.useState(InitialProducts)
     const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
@@ -36,6 +37,8 @@ function WeekNine() {
 
 
     return (
+
+
         <div className='mx-7'>
             {/* <Routing /> */}
             <Title className='mt-5 mb-16 text-center'>
@@ -50,7 +53,8 @@ function WeekNine() {
                 <ProductsTable handleDelete={handleDelete} handleEdit={handleEdit} products={products} />
             </div>
 
-        </div>
+        </div >
+
     )
 }
 
