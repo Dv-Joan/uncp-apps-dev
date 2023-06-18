@@ -6,9 +6,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Button, Chip } from '@mui/material';
+import { IconEdit, IconTrash } from '@tabler/icons-react';
 import Paper from '@mui/material/Paper';
 import { products } from '../../data/products.json';
-import { Title } from '@mantine/core';
+import { ActionIcon, Title } from '@mantine/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -54,6 +55,7 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                             key={product.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             hover={true}
+                            onClick={() => handleEdit(product)}
 
                         >
                             <TableCell align="right" component="th" scope="row">
@@ -71,14 +73,15 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                                 <img width={200} src={product.image} alt="product-image" />
                             </TableCell> */}
                             <TableCell align="right" >
-                                <div className='flex justify-center'>
-                                    <Button onClick={
+                                <div className='flex gap-2'>
+                                    <ActionIcon title='edit' color='blue' onClick={
                                         () => handleEdit(product)
-                                    } variant='contained' color='primary' size='small'>
-                                        Edit
-                                    </Button>                                                                               <Button onClick={() => handleDelete(product.id)} size='small' color='error' style={{ marginLeft: 20 }} >
-                                        Delete
-                                    </Button>
+                                    }>
+                                        <IconEdit size="1.125rem" />
+                                    </ActionIcon >                                                           <ActionIcon title='delete' color='red' onClick={() => handleDelete(product.id)
+                                    }                              >
+                                        <IconTrash size="1.125rem" />
+                                    </ActionIcon>
                                 </div>
                             </TableCell>
 
