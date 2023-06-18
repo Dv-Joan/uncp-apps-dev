@@ -14,6 +14,8 @@ type FormProps = {
     handleUpdate?: (product: Product) => void,
     handleCancel?: () => void
 }
+
+
 export function ProductsForm({ handleAdd, currentProduct, handleUpdate, handleCancel }: FormProps) {
     const { handleSubmit, control, reset, setValue, formState: { errors } } = useForm<Product>();
     useEffect(() => {
@@ -30,7 +32,8 @@ export function ProductsForm({ handleAdd, currentProduct, handleUpdate, handleCa
 
     const onSubmit = (data: Product) => {
         if (currentProduct) {
-            handleUpdate && handleUpdate({ ...data, id: currentProduct.id });
+            handleUpdate?.({ ...data, id: currentProduct.id });
+
         } else {
             handleAdd({ ...data, id: uuidv4() });
         }

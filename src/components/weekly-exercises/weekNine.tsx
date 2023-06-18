@@ -5,12 +5,17 @@ import Routing from './../../pages/routing'
 import { ProductsForm } from './../ui/form'
 import { ProductsTable } from './../ui/table'
 import { Title } from '@mantine/core'
-
+let INITIAL_STATE = {
+    products: InitialProducts,
+};
 
 function WeekNine() {
+    const INITIAL_STATE = {
+        products: InitialProducts,
+    };
     const [products, setProducts] = React.useState(InitialProducts)
     const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
-    const handleDelete = (id: number) => {
+    const handleDelete = (id: string) => {
         const newProducts = products?.filter((product) => product.id !== id);
         setProducts(newProducts);
     };
@@ -26,19 +31,17 @@ function WeekNine() {
         setProducts(newProducts);
     };
     useEffect(() => {
-        if (currentProduct) {
-
-            handleUpdate(currentProduct);
-        } else {
-            setCurrentProduct(null);
-
+        const localProducts = localStorage.getItem('products');
+        if (localProducts) {
+            setProducts(JSON.parse(localProducts));
         }
-    }, [currentProduct]);
+    }, []);
 
+    useEffect(() => {
+        localStorage.setItem('products', JSON.stringify(products));
+    }, [products])
 
     return (
-
-
         <div className='mx-7'>
             {/* <Routing /> */}
             <Title className='mt-5 mb-16 text-center'>

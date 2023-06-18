@@ -21,7 +21,7 @@ AOS.init({
 });
 type TableProps = {
     products: typeof products,
-    handleDelete: (id: number) => void
+    handleDelete: (id: string) => void
     handleEdit: (product: typeof products[0]) => void
 }
 
