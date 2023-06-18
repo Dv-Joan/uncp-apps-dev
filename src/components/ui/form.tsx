@@ -1,20 +1,23 @@
 import React from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { Product } from '../../types/product';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Input, Checkbox, Alert } from '@mui/material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { Title } from '@mantine/core';
+import { ErrorMessage } from '@hookform/error-message';
 
 type FormProps = {
     products: Product[],
     handleAdd: (product: Product) => void
+    currentProduct?: Product | null,
+    handleUpdate?: (product: Product) => void,
+    handleCancel?: () => void
 }
-export function ProductsForm({ products, handleAdd }: FormProps) {
-    const { handleSubmit, control, reset } = useForm<Product>();
-    const onSubmit: SubmitHandler<Product> = (data) => {
-        handleAdd({ ...data, id: products.length + 1 });
-        reset();
-    }
+export function ProductsForm({ handleAdd, currentProduct, handleUpdate, handleCancel }: FormProps) {
+    const { handleSubmit, control, reset, setValue, formState: { errors } } = useForm<Product>();
+    const onSubmit = (data: Product) => {
+        handleAdd(data);
+    };
     return (
         <form style={{ width: 600 }} className='flex flex-col max-w-sm bg-white rounded-lg p-7 gap-7' onSubmit={handleSubmit(onSubmit)}>
             <Title order={3} color='black' >
@@ -23,38 +26,80 @@ export function ProductsForm({ products, handleAdd }: FormProps) {
             <Controller
                 name="name"
                 control={control}
-                render={({ field }) => <TextField {...field} label="Product Name" />}
+                render={({ field: { onChange, value } }) => <TextField label='Name' onChange={onChange} value={value} />}
+                rules={{ required: { value: true, message: `Este campo es requerido` } }}
             />
-            <Controller
+            {
+                errors.name && <ErrorMessage render={
+                    ({ message }) => <Alert severity="error">{message}</Alert>
+                } errors={errors} name='name' />
+            }
 
+
+            <Controller
                 name="description"
                 control={control}
                 defaultValue=""
+                render={({ field: { onChange, value } }) => <TextField onChange={onChange} value={value} label="Description"
+                    className='p-2 py-3 text-black bg-transparent rounded border-1 border-slate-500' />}
 
-                render={({ field }) => <TextareaAutosize placeholder='Description' className='p-2 py-3 text-black bg-transparent rounded border-1 border-slate-500'
-                    {...field}
 
-                />}
+
             />
             <Controller
                 name="model"
                 control={control}
                 defaultValue=""
-                render={({ field }) => <TextField {...field} label="Model" />}
+                render={({ field: { onChange, value } }) => <TextField label='Model' onChange={onChange} value={value} />}
+
+
+
             />
+
             <Controller
                 name="price"
                 control={control}
-                render={({ field }) => <TextField type='number'  {...field} label="Price" />}
+
+                render={({ field: { onChange, value } }) => <TextField type='number' label='Price' onChange={onChange} value={value} />}
+                rules={{
+                    required: { value: true, message: `Este campo  es requerido` },
+                    min: { value: 1, message: 'La cantidad debe ser mayor a 0' },
+                }}
             />
+            {
+                errors.price && <ErrorMessage render={
+                    ({ message }) => <Alert severity="error">{message}</Alert>
+                } errors={errors} name='price' />
+            }
             <Controller
                 name="quantity"
                 control={control}
-                render={({ field }) => <TextField type='number' {...field} label="Quantity" />}
+                render={({ field: { onChange, value } }) => <TextField type='number' label='Quantity' onChange={onChange} value={value} />}
+                rules={{
+                    required: { value: true, message: 'Este campo es requerido' },
+                    min: { value: 1, message: 'La cantidad debe ser mayor a 0' },
+                    max: { value: 1000, message: 'La cantidad debe ser menor a 1000' }
+                }}
+
             />
+            {
+                errors.quantity && <ErrorMessage render={
+                    ({ message }) => <Alert severity="error">{message}</Alert>
+                } errors={errors} name='quantity' />
+            }
             <div className='flex justify-between'>
-                <Button type="reset" onClick={() => reset()} >Limpiar</Button>
-                <Button type="submit" variant='contained' >Registrar</Button>
+                <Button type="reset" color='error' onClick={
+                    currentProduct ? handleCancel : () => reset()
+                } >
+                    {
+                        currentProduct ? 'Cancelar' : 'Limpiar'
+                    }
+                </Button>
+                <Button type="submit" variant='contained' >
+                    {
+                        currentProduct ? 'Guardar' : 'Agregar'
+                    }
+                </Button>
             </div>
 
         </form >

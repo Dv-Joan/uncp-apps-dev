@@ -21,16 +21,20 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
         <TableContainer component={Paper} style={{
             borderRadius: 10, padding: 20
         }} >
-            <Table sx={{ minWidth: 650, maxWidth: 800 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Product</TableCell>
+            <Table className='' sx={{ minWidth: 650, maxWidth: 800 }} aria-label="simple table">
+                <TableHead  >
+                    <TableRow className=' backdrop-blur-xl bg-gradient-to-r from-blue-500 from-10%  to-cyan-500 to-90% font-bold ' >
+                        <TableCell style={{
+                            borderTopLeftRadius: 10, borderBottomLeftRadius: 10,
+                        }} align="right">Product</TableCell>
                         <TableCell align="right">Model</TableCell>
                         <TableCell align="right">Description</TableCell>
                         <TableCell align="right">Price</TableCell>
                         <TableCell align="right">Quantity</TableCell>
                         {/* <TableCell align="right">Image</TableCell> */}
-                        <TableCell align="right">Actions</TableCell>
+                        <TableCell style={{
+                            borderTopRightRadius: 10, borderBottomRightRadius: 10,
+                        }} align="center">Actions</TableCell>
 
                     </TableRow>
                 </TableHead>
@@ -49,7 +53,7 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                             <TableCell align="right" component="th" scope="row">
                                 {product.model}
                             </TableCell>
-                            <TableCell align="left">{product.description}</TableCell>
+                            <TableCell align="center">{product.description}</TableCell>
                             <TableCell width={90} align="right">S/. {product.price}</TableCell>
                             <TableCell align="center">
                                 <Chip size='small' color='success' variant='outlined' label={product.quantity} />
@@ -63,7 +67,7 @@ export function ProductsTable({ products, handleDelete, handleEdit }: TableProps
                                         () => handleEdit(product)
                                     } variant='contained' color='primary' size='small'>
                                         Edit
-                                    </Button>                                                                               <Button onClick={() => handleDelete(product.id)} variant='outlined' size='small' color='error' style={{ marginLeft: 20 }} >
+                                    </Button>                                                                               <Button onClick={() => handleDelete(product.id)} size='small' color='error' style={{ marginLeft: 20 }} >
                                         Delete
                                     </Button>
                                 </div>

@@ -26,11 +26,13 @@ function WeekNine() {
     };
     useEffect(() => {
         if (currentProduct) {
-            handleEdit(currentProduct)
+
+            handleUpdate(currentProduct);
         } else {
-            setCurrentProduct(null)
+            setCurrentProduct(null);
+
         }
-    }, [products])
+    }, [currentProduct]);
 
 
     return (
@@ -40,7 +42,11 @@ function WeekNine() {
                 Products CRUD
             </Title>
             <div className="flex gap-7">
-                <ProductsForm products={products} handleAdd={handleAdd} />
+                <ProductsForm products={products}
+                    handleAdd={handleAdd}
+                    currentProduct={currentProduct}
+                    handleUpdate={handleUpdate}
+                    handleCancel={() => setCurrentProduct(null)} />
                 <ProductsTable handleDelete={handleDelete} handleEdit={handleEdit} products={products} />
             </div>
 
